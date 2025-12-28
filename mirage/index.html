@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirage Ave | LW Foundation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;900&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles & Typography */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Full Width Section Utility */
+        section, nav, header, footer {
+            padding-left: 5%;
+            padding-right: 5%;
+            width: 100%;
+        }
+
+        /* Navigation */
+        nav {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        .back-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: opacity 0.3s;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+
+        /* Header & Branding */
+        header {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #333;
+            text-align: left;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .sub-header {
+            font-size: 0.8rem;
+            letter-spacing: 4px;
+            color: #888;
+            text-transform: uppercase;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 8rem;
+            padding-bottom: 8rem;
+            text-align: left;
+        }
+
+        .hero h1 {
+            font-size: clamp(4rem, 15vw, 8rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            line-height: 0.9;
+        }
+
+        .hero .est {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 6px;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #ccc;
+            max-width: 1000px;
+        }
+
+        /* Project Cards Section */
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            padding-left: 0;
+            padding-right: 0;
+            border-top: 1px solid #333;
+        }
+
+        .card {
+            border-right: 1px solid #333;
+            border-bottom: 1px solid #333;
+            padding: 4rem 5%;
+            text-align: left;
+            transition: background-color 0.3s ease;
+        }
+
+        .card:last-child {
+            border-right: none;
+        }
+
+        .card:hover {
+            background-color: #111;
+        }
+
+        .card h3 {
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        .card p {
+            color: #888;
+            font-size: 1rem;
+        }
+
+        /* Call to Action */
+        .cta {
+            background-color: #ffffff;
+            color: #000000;
+            padding-top: 10rem;
+            padding-bottom: 10rem;
+            text-align: left;
+        }
+
+        .cta h2 {
+            font-size: clamp(2rem, 8vw, 5rem);
+            font-weight: 900;
+            margin-bottom: 2rem;
+            line-height: 1;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #000000;
+            color: #ffffff;
+            padding: 1.5rem 4rem;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.02);
+        }
+
+        /* Footer */
+        footer {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+            text-align: left;
+            font-size: 0.9rem;
+            color: #555;
+            letter-spacing: 2px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            .details-grid { grid-template-columns: 1fr; }
+            .card { border-right: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="https://lwfoundation.xyz" class="back-link">← Back to lwfoundation.xyz</a>
+    </nav>
+
+    <header>
+        <div class="logo">LW FOUNDATION</div>
+        <div class="sub-header">HERNANDO COUNTY | PROJECT DETAIL</div>
+    </header>
+
+    <section class="hero">
+        <span class="est">EST. 2025</span>
+        <h1>MIRAGE AVE</h1>
+        <p>Our Mirage Ave initiative is dedicated to the systematic preservation of Hernando County's infrastructure. We focus on intensive roadside cleanup, invasive debris management, and long-term environmental stewardship to ensure this corridor remains a safe and clean passage for our community.</p>
+    </section>
+
+    <section class="details-grid">
+        <div class="card">
+            <h3>Litter Removal</h3>
+            <p>Bi-weekly sweeps targeting micro-plastics and large-scale debris to prevent environmental contamination.</p>
+        </div>
+        <div class="card">
+            <h3>Safety Monitoring</h3>
+            <p>Identifying and reporting road hazards and illegal dumping activities to local authorities.</p>
+        </div>
+        <div class="card">
+            <h3>Community Impact</h3>
+            <p>Restoring local pride by maintaining aesthetic standards and supporting local ecosystem health.</p>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>READY TO MAKE<br>A DIFFERENCE?</h2>
+        <a href="mailto:volunteer@lwfoundation.xyz" class="cta-button">Volunteer for this Project</a>
+    </section>
+
+    <footer>
+        &copy; 2025 LW FOUNDATION | LWFOUNDATION.XYZ
+    </footer>
+
+</body>
+</html>
