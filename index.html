@@ -1,675 +1,338 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>LW Foundation | Hernando County Adopt-A-Road</title>
-
     <style>
-
         :root {
-
             --bg: #000000;
-
             --surface: #111111;
-
             --border: #222222;
-
             --accent: #ffffff;
-
             --text-dim: #999999;
-
         }
-
-
 
         html {
-
             scroll-behavior: smooth;
-
         }
-
-
 
         body {
-
             margin: 0;
-
             font-family: 'Inter', -apple-system, system-ui, sans-serif;
-
             background: var(--bg);
-
             color: #fff;
-
             line-height: 1.6;
-
         }
-
-
 
         /* Navigation */
-
         nav {
-
             padding: 1.5rem 8%;
-
             display: flex;
-
             justify-content: space-between;
-
             align-items: center;
-
             border-bottom: 1px solid var(--border);
-
             position: sticky;
-
             top: 0;
-
             background: rgba(0,0,0,0.95);
-
             backdrop-filter: blur(12px);
-
             z-index: 1000;
-
         }
-
-
 
         .brand-text {
-
             font-size: 1.5rem;
-
             font-weight: 900;
-
             letter-spacing: -1px;
-
             text-transform: uppercase;
-
             color: var(--accent);
-
             text-decoration: none;
-
         }
-
-
 
         /* Hero */
-
         .hero {
-
             padding: 120px 8% 80px 8%;
-
             text-align: left;
-
             border-bottom: 1px solid var(--border);
-
         }
-
-
 
         h1 {
-
             font-size: clamp(2.5rem, 8vw, 5rem);
-
             font-weight: 800;
-
             line-height: 1.1;
-
             margin: 0;
-
             letter-spacing: -3px;
-
             text-transform: uppercase;
-
         }
-
-
 
         .hero p {
-
             font-size: 1.25rem;
-
             color: var(--text-dim);
-
             max-width: 650px;
-
             margin-top: 2rem;
-
         }
-
-
 
         /* Section Global Styles */
-
         .section-padding { padding: 100px 8%; border-bottom: 1px solid var(--border); }
 
-
-
         .section-label {
-
             font-size: 0.75rem;
-
             letter-spacing: 4px;
-
             text-transform: uppercase;
-
             color: var(--text-dim);
-
             margin-bottom: 2.5rem;
-
             display: block;
-
         }
-
-
 
         /* Layout Grids */
-
         .about-grid {
-
             display: grid;
-
             grid-template-columns: 1fr 1fr;
-
             gap: 80px;
-
         }
-
-
 
         .about-content h2 {
-
-            font-size: clamp(2rem, 5vw, 2.8rem);
-
+            font-size: clamp(2.5rem, 5vw, 2.8rem);
             margin-top: 0;
-
             letter-spacing: -2px;
-
             line-height: 1.2;
-
             text-transform: uppercase;
-
         }
-
-
 
         .founder-quote {
-
             border-left: 2px solid #fff;
-
             padding-left: 30px;
-
             margin: 40px 0;
-
             font-style: italic;
-
             color: #fff;
-
             font-size: 1.1rem;
-
         }
-
-
 
         /* Project Cards */
-
         .grid {
-
             display: grid;
-
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
             gap: 1.5rem;
-
         }
-
-
 
         .card-link {
-
             text-decoration: none;
-
             color: inherit;
-
             display: block;
-
         }
-
-
 
         .card {
-
             background: var(--surface);
-
             padding: 3rem;
-
             border: 1px solid var(--border);
-
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-
             height: 100%;
-
             box-sizing: border-box;
-
         }
-
-
 
         .card-link:hover .card {
-
             border-color: var(--accent);
-
             transform: translateY(-8px);
-
             background: #161616;
-
         }
-
-
 
         .status-tag {
-
             font-size: 0.65rem;
-
             font-weight: bold;
-
             border: 1px solid var(--accent);
-
             color: var(--accent);
-
             padding: 4px 10px;
-
             display: inline-block;
-
             margin-bottom: 1.5rem;
-
             text-transform: uppercase;
-
             letter-spacing: 1px;
-
         }
-
-
 
         /* Volunteer Form Styles */
-
         .volunteer-form {
-
             display: flex;
-
             flex-direction: column;
-
             gap: 25px;
-
         }
-
-
 
         .form-group {
-
             display: flex;
-
             flex-direction: column;
-
         }
-
-
 
         .form-group input, .form-group select, .form-group textarea {
-
             background: transparent;
-
             border: none;
-
             border-bottom: 1px solid var(--border);
-
             color: #fff;
-
             padding: 12px 0;
-
             font-family: inherit;
-
             font-size: 1rem;
-
             transition: border-color 0.3s;
-
         }
-
-
 
         .form-group input:focus, .form-group select:focus {
-
             outline: none;
-
             border-bottom-color: var(--accent);
-
         }
-
-
 
         .form-group select option {
-
             background: var(--surface);
-
             color: #fff;
-
         }
-
-
 
         /* Buttons */
-
         .btn {
-
             display: inline-block;
-
             padding: 1.2rem 3rem;
-
             background: #fff;
-
             color: #000;
-
             text-decoration: none;
-
             font-weight: bold;
-
             text-transform: uppercase;
-
             letter-spacing: 2px;
-
             font-size: 0.8rem;
-
             transition: 0.3s;
-
             border: none;
-
             cursor: pointer;
-
             text-align: center;
-
         }
-
-
 
         .btn:hover { background: #ccc; }
-
         
-
         /* CTA Section */
-
         .cta {
-
             background: #fff;
-
             color: #000;
-
             padding: 120px 8%;
-
             text-align: center;
-
         }
-
-
 
         footer {
-
             padding: 60px 8%;
-
             color: #555;
-
             font-size: 0.75rem;
-
             text-align: center;
-
             letter-spacing: 1px;
-
         }
-
-
 
         @media (max-width: 900px) {
-
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
-
             h1 { font-size: 3.5rem; }
-
             nav { flex-direction: column; align-items: flex-start; gap: 15px; }
-
         }
-
     </style>
-
 </head>
-
 <body>
 
-
-
 <nav>
-
     <a href="#" class="brand-text">LW Foundation</a>
-
     <div style="font-size: 0.7rem; letter-spacing: 2px; text-align: right; font-weight: bold; color: var(--text-dim);">
-
         HERNANDO COUNTY<br>PROJECT DASHBOARD
-
     </div>
-
 </nav>
 
-
-
 <section class="hero">
-
     <div style="font-size: 0.8rem; letter-spacing: 5px; color: var(--text-dim); margin-bottom: 1rem;">EST. 2025</div>
-
     <h1>CLEANING ROADS.<br>RESTORED PRIDE.</h1>
-
     <p>The LW Foundation is a non-profit organization dedicated to the environmental preservation and beautification of Hernando County.</p>
-
 </section>
 
-
-
 <section class="section-padding">
-
     <span class="section-label">Our Foundation</span>
-
     <div class="about-grid">
-
         <div class="about-content">
-
             <h2>The Vision of Logan Westlake</h2>
-
             <p style="color: var(--text-dim); font-size: 1.1rem;">Founded by Logan Westlake, the LW Foundation was born out of a refusal to accept the status quo. Driven by a deep-seated frustration with the neglect of our local thoroughfares, Logan took action.</p>
-
             <div class="founder-quote">
-
                 "I couldn't stand seeing how dirty and filthy our roads were getting. Our community deserves better, so we decided to be the ones to change it."
-
                 <br><br>
-
                 <strong>— Logan Westlake, Founder</strong>
-
             </div>
-
         </div>
-
         <div class="about-content">
-
             <p style="margin-top: 0; color: var(--text-dim);">Today, the LW Foundation stands as a symbol of community accountability. We don't just wait for change; we drive it. Our partnership with the Hernando County Adopt-A-Road program ensures that our efforts are structured, legal, and high-impact.</p>
-
             <p style="color: var(--text-dim);">Our focus is on more than just "picking up trash"—we are reclaiming the natural beauty of Hernando County for every resident and visitor.</p>
-
         </div>
-
     </div>
-
 </section>
-
-
 
 <section class="section-padding">
-
     <span class="section-label">2025 Active Operations</span>
-
     <div class="grid">
-
-        <a href="https://lwllc.xyz/mirage" class="card-link">
-
+        <a href="https://lwfoundation.xyz/mirage" class="card-link">
             <div class="card">
-
                 <div class="status-tag">Scheduled</div>
-
                 <h3>Mirage Ave</h3>
-
                 <p style="color: var(--text-dim);">Comprehensive roadside cleanup. Our team will be clearing the corridors of Mirage Ave to restore its visual and environmental integrity.</p>
-
                 <div style="margin-top: 2rem; font-size: 0.75rem; font-weight: bold; letter-spacing: 1px;">VIEW PROJECT DETAILS →</div>
-
             </div>
-
         </a>
 
-
-
-        <a href="https://lwllc.xyz/mirage-lake" class="card-link">
-
+        <a href="https://lwfoundation.xyz/mirage-lake" class="card-link">
             <div class="card">
-
                 <div class="status-tag">Scheduled</div>
-
                 <h3>Mirage Lake</h3>
-
                 <p style="color: var(--text-dim);">Lakeside preservation effort focusing on the shoreline area next to Mirage Ave. Protecting local water from pollution runoff.</p>
-
                 <div style="margin-top: 2rem; font-size: 0.75rem; font-weight: bold; letter-spacing: 1px;">VIEW PROJECT DETAILS →</div>
-
             </div>
-
         </a>
-
     </div>
-
 </section>
-
-
 
 <section id="volunteer" class="section-padding">
-
     <span class="section-label">Join the Movement</span>
-
     <div class="about-grid">
-
         <div class="about-content">
-
             <h2>Volunteer With Us</h2>
-
             <p style="color: var(--text-dim);">Real change requires boots on the ground. We provide all necessary safety equipment, including vests, gloves, and collection tools. Whether you are looking for community service hours or simply want a cleaner neighborhood, we welcome your help.</p>
-
             
-
             <div style="margin-top: 3rem;">
-
                 <div style="margin-bottom: 2rem;">
-
                     <div style="font-weight: bold; letter-spacing: 1px; font-size: 0.8rem; margin-bottom: 0.5rem;">SAFETY FIRST</div>
-
                     <p style="color: var(--text-dim); font-size: 0.9rem; margin: 0;">All volunteers must attend a brief safety orientation at the start of each project site cleanup.</p>
-
                 </div>
-
                 <div>
-
                     <div style="font-weight: bold; letter-spacing: 1px; font-size: 0.8rem; margin-bottom: 0.5rem;">GEAR PROVIDED</div>
-
                     <p style="color: var(--text-dim); font-size: 0.9rem; margin: 0;">High-visibility vests, industrial gloves, and trash pickers are supplied to all participants.</p>
-
                 </div>
-
             </div>
-
         </div>
-
-
 
         <div style="background: var(--surface); padding: 50px; border: 1px solid var(--border);">
-
             <form id="volunteer-form" class="volunteer-form" action="https://formspree.io/f/xnjazonj" method="POST">
-
                 <div class="form-group">
-
                     <input type="text" name="name" placeholder="FULL NAME" required>
-
                 </div>
-
                 <div class="form-group">
-
                     <input type="email" name="email" placeholder="EMAIL ADDRESS" required>
-
                 </div>
-
                 <div class="form-group">
-
                     <select name="project" required>
-
                         <option value="" disabled selected>SELECT A PROJECT</option>
-
                         <option value="mirage-ave">Mirage Ave Cleanup</option>
-
                         <option value="mirage-lake">Mirage Lake Preservation</option>
-
                         <option value="general">General Interest / Future Projects</option>
-
                     </select>
-
                 </div>
-
                 <div class="form-group">
-
                     <textarea name="message" rows="3" placeholder="MESSAGE (OPTIONAL)" style="background: transparent; border: none; border-bottom: 1px solid var(--border); color: #fff; padding: 12px 0; font-family: inherit; resize: none;"></textarea>
-
                 </div>
-
                 <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Submit Application</button>
-
             </form>
-
             <p style="font-size: 0.7rem; color: var(--text-dim); margin-top: 20px; text-align: center;">By submitting, you agree to be contacted regarding LW Foundation cleanup events.</p>
-
         </div>
-
     </div>
-
 </section>
-
-
 
 <section class="cta">
-
     <h2 style="font-size: clamp(2rem, 6vw, 3rem); letter-spacing: -2px; margin: 0;">HELP US LEAD THE WAY.</h2>
-
     <p style="font-size: 1.2rem; margin-top: 10px;">Be part of the solution in Hernando County.</p>
-
-    <a href="mailto:contact@lwfoundation.org" class="btn" style="background: #000; color: #fff; margin-top: 2rem;">Contact the Foundation</a>
-
+    <a href="mailto:contact@lwfoundation.xyz" class="btn" style="background: #000; color: #fff; margin-top: 2rem;">Contact the Foundation</a>
 </section>
 
-
-
 <footer>
-
     &copy; 2025 LW FOUNDATION | ADOPT-A-ROAD PARTNER | HERNANDO COUNTY, FLORIDA
-
 </footer>
 
-
-
 </body>
-
 </html>
