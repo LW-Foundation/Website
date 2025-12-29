@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer | LW Foundation</title>
+    <style>
+        :root {
+            --bg: #000000;
+            --surface: #111111;
+            --border: #222222;
+            --accent: #ffffff;
+            --text-dim: #999999;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
+            background: var(--bg);
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 1.5rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+        }
+
+        .brand-text {
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 120px 8% 80px 8%;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin: 0;
+            letter-spacing: -3px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-dim);
+            max-width: 650px;
+            margin-top: 2rem;
+        }
+
+        /* Section Global Styles */
+        .section-padding { padding: 100px 8%; border-bottom: 1px solid var(--border); }
+
+        .section-label {
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            margin-bottom: 2.5rem;
+            display: block;
+        }
+
+        /* Layout Grids */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+
+        .about-content h2 {
+            font-size: clamp(2.5rem, 5vw, 2.8rem);
+            margin-top: 0;
+            letter-spacing: -2px;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        /* Volunteer Form Styles */
+        .volunteer-form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--border);
+            color: #fff;
+            padding: 12px 0;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-bottom-color: var(--accent);
+        }
+
+        .form-group select option {
+            background: var(--surface);
+            color: #fff;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover { background: #ccc; }
+        
+        /* CTA Section */
+        .cta {
+            background: #fff;
+            color: #000;
+            padding: 120px 8%;
+            text-align: center;
+        }
+
+        footer {
+            padding: 60px 8%;
+            color: #555;
+            font-size: 0.75rem;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 900px) {
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            h1 { font-size: 3.5rem; }
+            nav { flex-direction: column; align-items: flex-start; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="brand-text">LW Foundation</a>
+    <div style="font-size: 0.7rem; letter-spacing: 2px; text-align: right; font-weight: bold; color: var(--text-dim);">
+        JOIN THE MISSION<br>VOLUNTEER PORTAL
+    </div>
+</nav>
+
+<section class="hero">
+    <div style="font-size: 0.8rem; letter-spacing: 5px; color: var(--text-dim); margin-bottom: 1rem;">GET INVOLVED</div>
+    <h1>BOOTS ON THE GROUND.<br>REAL IMPACT.</h1>
+    <p>Hernando County is our home. We are looking for dedicated individuals to help us reclaim our roads and preserve our natural environment.</p>
+</section>
+
+<section class="section-padding">
+    <span class="section-label">The Commitment</span>
+    <div class="about-grid">
+        <div class="about-content">
+            <h2>What to expect</h2>
+            <p style="color: var(--text-dim); font-size: 1.1rem;">Volunteering with the LW Foundation is straightforward and rewarding. We handle the logistics, the permits, and the equipment. You provide the energy.</p>
+            
+            <ul style="list-style: none; padding: 0; margin-top: 2rem;">
+                <li style="margin-bottom: 1.5rem; border-left: 1px solid var(--border); padding-left: 20px;">
+                    <strong style="display: block; letter-spacing: 1px;">COMMUNITY SERVICE</strong>
+                    <span style="color: var(--text-dim); font-size: 0.9rem;">We provide signed documentation for student or court-ordered community service hours.</span>
+                </li>
+                <li style="margin-bottom: 1.5rem; border-left: 1px solid var(--border); padding-left: 20px;">
+                    <strong style="display: block; letter-spacing: 1px;">FLEXIBLE SCHEDULING</strong>
+                    <span style="color: var(--text-dim); font-size: 0.9rem;">Join us for a single morning or become a regular site leader.</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div style="background: var(--surface); padding: 50px; border: 1px solid var(--border);">
+            <form id="volunteer-form" class="volunteer-form" action="https://formspree.io/f/xnjazonj" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="FULL NAME" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="EMAIL ADDRESS" required>
+                </div>
+                <div class="form-group">
+                    <select name="project" required>
+                        <option value="" disabled selected>SELECT A PROJECT</option>
+                        <option value="mirage-ave">Mirage Ave Cleanup</option>
+                        <option value="mirage-lake">Mirage Lake Preservation</option>
+                        <option value="general">General Interest / Future Projects</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" rows="3" placeholder="WHY DO YOU WANT TO JOIN? (OPTIONAL)" style="background: transparent; border: none; border-bottom: 1px solid var(--border); color: #fff; padding: 12px 0; font-family: inherit; resize: none;"></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Send Application</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <h2 style="font-size: clamp(2rem, 6vw, 3rem); letter-spacing: -2px; margin: 0;">NOT READY TO DIG IN?</h2>
+    <p style="font-size: 1.2rem; margin-top: 10px;">Return to the dashboard to see our active operations.</p>
+    <a href="index.html" class="btn" style="background: #000; color: #fff; margin-top: 2rem;">Return Home</a>
+</section>
+
+<footer>
+    &copy; 2025 LW FOUNDATION | ADOPT-A-ROAD PARTNER | HERNANDO COUNTY, FLORIDA
+</footer>
+
+</body>
+</html>
